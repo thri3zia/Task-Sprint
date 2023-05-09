@@ -13,7 +13,7 @@ interface IProductInfo{
 }
 interface Props{}
 
-export const ProductInfo: NextPage<Props> = () => {
+export const ProductInfo: NextPage<Props> = () =>  {
 
     const [ name, setName] = useState('')
     const [ category, setCategory] = useState('')
