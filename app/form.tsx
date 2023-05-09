@@ -232,22 +232,32 @@ export const ProductInfo: NextPage<Props> = () => {
 
                 <div className="shippingContainer">
                     <label>Width </label>
-                    <input type='number'value={width} onChange={(e) => setWidth(e. target.value)}/>
+                    <input type='number' required className ="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+      focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none invalid:border-pink-500 invalid:text-pink-600
+      focus:invalid:border-pink-500 focus:invalid:ring-pink-500" value={width} onChange={(e) => setWidth(e. target.value)}/>
                     <br/>
                     <label>Length </label>
-                    <input type='number'value={length} onChange={(e) => setLength(e. target.value)}/>
+                    <input type='number' required className ="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+      focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none invalid:border-pink-500 invalid:text-pink-600
+      focus:invalid:border-pink-500 focus:invalid:ring-pink-500" value={length} onChange={(e) => setLength(e. target.value)}/>
                     <br/>
                     <label>Volumetric Weight </label>
-                    <input type='number'value={weight} onChange={(e) => setWeight(e. target.value)}/>
+                    <input type='number' required className ="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+      focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none invalid:border-pink-500 invalid:text-pink-600
+      focus:invalid:border-pink-500 focus:invalid:ring-pink-500" value={weight} onChange={(e) => setWeight(e. target.value)}/>
                     <br/>
                     <label>Packaging Type </label>
-                    <select value={packagetype} onChange={(e) => setPackagingType(e. target.value)}>
+                    <select required className ="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+      focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none invalid:border-pink-500 invalid:text-pink-600
+      focus:invalid:border-pink-500 focus:invalid:ring-pink-500" value={packagetype} onChange={(e) => setPackagingType(e. target.value)}>
                         <option value="pouch">Pouch</option>
                         <option value="box">Box</option>
                     </select>
                     <br/>
                     <label>Available Courier</label>
-                    <select value={courier} onChange={(e) => setAvailableCourier(e. target.value)}>
+                    <select required className ="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+      focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none invalid:border-pink-500 invalid:text-pink-600
+      focus:invalid:border-pink-500 focus:invalid:ring-pink-500" value={courier} onChange={(e) => setAvailableCourier(e. target.value)}>
                         <option value="pouch">Pouch</option>
                         <option value="box">Box</option>
                     </select>
@@ -296,9 +306,6 @@ export const ProductInfo: NextPage<Props> = () => {
                 </div>
             </div>
 {/* ------------------------------------------------------------------------------------------------------------------------- */}
-
-
-
 
             <br/>
             <button type='submit'>SAVE AND  PUBLISH</button>
