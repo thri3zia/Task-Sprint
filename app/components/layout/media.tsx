@@ -1,29 +1,37 @@
 'use client'
 
 import AddImage from "../addImage"
-import{FormEvent,useState} from 'react'
+import{FormEvent,useEffect,useState} from 'react'
 
-const MediaBox = () => {
+const MediaBox = (
+    {callback}: {callback: (images: Array<string>)=>void}
+    ) => {
 
     const [ uploading, setUploading] = useState(false)
     const [ selectedImage, setSelectedImage] = useState<Array<string>>([])
     const [ selectedFile, setSelectedFile] =useState <File>()
 
-    const handeOnchange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        
+    const handleOnchange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const files = event.target?.files as FileList;
         const fileref = files[0];
         if(fileref){
-            const fileType: string = fileref.type||"";
-            const reader = new FileReader();
-            reader.readAsBinaryString(fileref)
-            reader.onload = (e: any)=>{
-                setSelectedImage([`data:${fileType};base64,${btoa(e.target.result)}` , ... selectedImage ])
+            try {
+                const fileType: string = fileref.type||"";
+                const reader = new FileReader();
+                reader.readAsBinaryString(fileref)
+                reader.onload = (e: any)=>{
+                    setSelectedImage([`data:${fileType};base64,${btoa(e.target.result)}` , ... selectedImage ])
+                }
+            } catch (error) {
+                console.log("Wrong File Format.");
             }
         }
-        
 
     }
+
+    useEffect(() => {
+        callback(selectedImage)
+    },[selectedImage])
 
     return ( 
         <div >
@@ -33,7 +41,7 @@ const MediaBox = () => {
                 <div className="py-4 flex items-center justify-center w-48 text-sm ml-10 mt-10">
                     <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                         <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                        <input id="dropzone-file" type="file" className="hidden" onChange={(e) => handeOnchange(e)} />
+                        <input id="dropzone-file" type="file" className="hidden" onChange={(e) => handleOnchange(e)} />
                                 {selectedImage[9] ? (
                                     <img src={selectedImage[9]} alt=""/>
                                 ) : (
