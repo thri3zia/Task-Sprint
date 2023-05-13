@@ -60,7 +60,7 @@ const Shipping = ({callback}:{callback: (ship: Shipping) => void}) => {
 
     return ( 
     <form>
-        <div>
+        <div className="m-6">
 
             <div className="relative mt-5 flex flex-wrap items-stretch">
                 <input
