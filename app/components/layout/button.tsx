@@ -3,7 +3,7 @@
 const SubmitButton = () => {
     return ( 
         <div className="flex justify-end">
-            <button type="button" className="mr-36 w-48 text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-24">SAVE AND PUBLISH</button>
+            <button type="button" className="mr-36 w-48 mb-8  text-black-700 opacity-75 hover:text-white border border-red-700 hover:bg-red-950 focus:ring-4 focus:outline-none focus:ring-red-300 font-semibold rounded-lg text-sm px-3 py-3 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">Submit And Publish</button>
         </div>
      );
 }

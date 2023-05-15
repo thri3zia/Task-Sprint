@@ -7,11 +7,19 @@ interface Product{
 }
 
 interface Sales{
-    allBarcode: string;
-    costOfSale: number;
-    grossPrice: number;
+    barcode: string;
+    sales: number;
+    gprice: number;
     price: number;
-    dateTime: string;
+    datetime: string;
 }
 
-export type {Product, Sales}
+interface Shipping{
+    width: number;
+    length: number;
+    weight: number;
+    packagetype: string;
+    courier: string;
+}
+
+export type {Product, Shipping , Sales}
