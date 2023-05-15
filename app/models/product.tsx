@@ -22,4 +22,17 @@ interface Shipping{
     courier: string;
 }
 
-export type {Product, Shipping , Sales}
+interface Tags{
+    maintag: string;
+    subtag: string;
+}
+
+interface Shipping{
+    width: number;
+    length: number;
+    weight: number;
+    packagetype: string;
+    courier: string;
+}
+
+export type {Product, Shipping , Sales, Tags}

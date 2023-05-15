@@ -12,6 +12,7 @@ const MediaBox = (
     const [ selectedFile, setSelectedFile] =useState <File>()
 
     const handleOnchange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        
         const files = event.target?.files as FileList;
         const fileref = files[0];
         if(fileref){
@@ -38,6 +39,7 @@ const MediaBox = (
 
           
                 <div className="py-4 flex items-center justify-center w-48 text-sm ml-10 mt-10">
+
                     <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                         <div className="flex flex-col items-center justify-center pt-5 pb-6">
                         <input id="dropzone-file" type="file" className="hidden" onChange={(e) => handleOnchange(e)} />
@@ -54,15 +56,8 @@ const MediaBox = (
                        </div>
                         <span className="select-none mt-1"><h4 className="select-none"></h4></span>
                     </label>
-                    
 
-
-
-                </div>
-
-               
-
-                <div className="py-4 flex items-center justify-center w-48 text-sm ml-10 mt-10">
+                    <div className="py-4 flex items-center justify-center w-48 text-sm ml-10 mt-10">
                     <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                         <div className="flex flex-col items-center justify-center pt-5 pb-6">
                         <input id="dropzone-file" type="file" className="hidden" onChange={(e) => handleOnchange(e)} />
@@ -70,7 +65,17 @@ const MediaBox = (
                        </div>
                         <span className="select-none mt-1"><h4 className="select-none"></h4></span>
                     </label>
+                     </div>
+
+
+                    
+                    
+
+
+
                 </div>
+
+               
 
                 
         
