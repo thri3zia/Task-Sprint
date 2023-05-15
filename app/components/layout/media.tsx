@@ -12,6 +12,7 @@ const MediaBox = (
     const [ selectedFile, setSelectedFile] =useState <File>()
 
     const handleOnchange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        
         const files = event.target?.files as FileList;
         const fileref = files[0];
         if(fileref){

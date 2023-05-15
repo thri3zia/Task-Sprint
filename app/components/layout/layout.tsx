@@ -7,7 +7,7 @@ import ProductInformation from "./productInfo";
 import SalesInformation from "./salesInformation";
 import Shipping from "./shipping";
 import TagSection from "./tagsection";
-import { Product, Sales, Shipping as Ship } from "@/app/models/product";
+import { Product, Sales, Shipping as Ship, Tags } from "@/app/models/product";
 import AddTag from "./addtag";
 
 
@@ -17,44 +17,31 @@ const Layout = () => {
     const [ProductInfo, setProductInfo] = useState <Product> ()
     const [shipping, setShipping] = useState <Ship> ()
     const [sales, setSales] = useState <Sales> ()
-
-    const handleProductInfoCallback = (product: Product) => {
-        setProductInfo(product);
-    }
-    const handleMediaCallback = ( images: Array<string> )=>{
-        setSelectedImages(images);
-    }
-    const handleShippingCallback = (ship: Ship) =>{
-        setShipping(ship)
-    }
-    const handleSalesInfoCallback = (sales: Sales) =>{
-        setSales(sales);
-    }
-
+    const [tags, setTags] = useState <Tags> ()
 
     return ( 
         <div>
         <div className="scroll-smooth mt-12 pr- h-50 grid grid-cols-3 gap-4 content-center  ">
             <div className="ps-8 mb-3 ml-5 text-gray-900 dark:text-black-950">
                 <div className="font-semibold text-xl ml-6">Product Information</div>
-                <ProductInformation callback={handleProductInfoCallback}/>
+                <ProductInformation callback={setProductInfo}/>
             </div>
 
             <div className="ps-8 mb-3 ml-5 text-gray-500 dark:text-gray-400">
                 <div className="font-semibold text-xl">Sales Information</div>
-                <SalesInformation callback={handleSalesInfoCallback}/>
+                <SalesInformation callback={setSales}/>
             </div>
 
             <div className="ps-8 mb-3 text-gray-900 dark:text-gray-400">
                 <div className="font-semibold text-xl ml-6">Shipping</div>
-                <Shipping callback={handleShippingCallback}/>
+                <Shipping callback={setShipping}/>
             </div>
         </div>
 
         <div className="flex">
             <div className="mb-4 w-4/5 my-10 ml-36 h-[450px]">
                 <div className="font-semibold text-xl ml-10 mt-4">Media Management</div>
-                <MediaBox callback={handleMediaCallback}/> 
+                <MediaBox callback={setSelectedImages}/> 
             </div>
         </div>
 
@@ -62,8 +49,8 @@ const Layout = () => {
             <div className="mb-4 w-4/5 my-10 ml-36 h-[450px]">
             <div className="font-semibold text-xl ml-10 mt-4">Tags 
                 <div className="float-right"><AddTag/></div>
-            </div>
-            <TagSection/>
+            </div>-
+            <TagSection callback={setTags}/>
             
             </div>
         </div>
