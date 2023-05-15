@@ -23,16 +23,8 @@ interface Shipping{
 }
 
 interface Tags{
-    maintag: string;
-    subtag: string;
-}
-
-interface Shipping{
-    width: number;
-    length: number;
-    weight: number;
-    packagetype: string;
-    courier: string;
+    maintag: Array<string>;
+    subtag: Array<string>;
 }
 
 export type {Product, Shipping , Sales, Tags}

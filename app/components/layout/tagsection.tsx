@@ -7,8 +7,8 @@ import { Tags } from "@/app/models/product";
 
 const TagSection = ({callback}:{callback: (tag: Tags)=> void}) => {
 
-    const [maintag, setMaintag] = useState <string> ("");
-    const [subtag, setSubtag] = useState <string> ("")
+    const [maintag, setMaintag] = useState <Array<string>> ([]);
+    const [subtag, setSubtag] = useState <Array<string>> ([]);
     useEffect(() => {
         callback({maintag, subtag})
     }, [maintag, subtag]);
@@ -21,7 +21,12 @@ const TagSection = ({callback}:{callback: (tag: Tags)=> void}) => {
 
             <div>
                 <div className="mt-10">Sub Tags</div>
-                <SubTags callback={setSubtag}/>
+                
+                
+                {
+                    maintag.length? <SubTags maintag={maintag} callback={setSubtag}/> : null
+                }
+                
             </div>
             
 
