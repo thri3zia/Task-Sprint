@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import AddImage from "../addImage";
 import MediaBox from "./media";
 import ProductInformation from "./productInfo";
@@ -15,10 +15,35 @@ import SubmitButton from "./button";
 const Layout = () => {
     
     const [selectedImages, setSelectedImages] = useState <Array<string>> ([])
-    const [ProductInfo, setProductInfo] = useState <Product> ()
+    const [productInfo, setProductInfo] = useState <Product> ()
     const [shipping, setShipping] = useState <Ship> ()
     const [sales, setSales] = useState <Sales> ()
     const [tags, setTags] = useState <Tags> ()
+
+    const returnButton = useMemo(() => {
+        if (selectedImages && productInfo && shipping && sales && tags){
+            return (
+                <SubmitButton 
+                selectedImages={selectedImages}
+                productInfo={productInfo}
+                sales={sales}
+                shipping={shipping}
+                tags={tags}
+                />
+            )        
+        }
+
+        return (
+            <div className="flex justify-end">
+                <button disabled type="button" className="mr-36 w-48 mb-8  text-black-700 opacity-75 hover:text-white border border-red-700 hover:bg-red-950 focus:ring-4 focus:outline-none focus:ring-red-300 font-semibold rounded-lg text-sm px-3 py-3 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">Submit And Publish</button>
+            </div>
+            )
+        
+    }, [selectedImages, productInfo, shipping, sales,tags])
+
+    
+        
+    
 
     return ( 
         <div>
@@ -59,7 +84,7 @@ const Layout = () => {
 
         <div>
             <div>
-                <SubmitButton/>
+                {returnButton}
             </div>
         </div>
 
