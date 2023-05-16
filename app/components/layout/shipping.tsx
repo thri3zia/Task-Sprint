@@ -1,7 +1,7 @@
 'use client'
 
 import { Shipping } from '@/app/models/product'
-import{FormEvent,useEffect,useState} from 'react'
+import{useEffect,useState} from 'react'
 
 const Shipping = ({callback}:{callback: (ship: Shipping) => void}) => {
 
@@ -56,7 +56,7 @@ const Shipping = ({callback}:{callback: (ship: Shipping) => void}) => {
     useEffect(() => {
         callback({width, length, weight, packagetype, courier})
         
-    }, [width, length, weight, packagetype, courier]);
+    }, [width, length, weight, packagetype, courier, callback]);
 
     return ( 
     <form>
@@ -110,7 +110,7 @@ const Shipping = ({callback}:{callback: (ship: Shipping) => void}) => {
 
             <div className="relative mt-5" >
                     <select onChange={(e) => handleOnchange(e, "packaging")} className="bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                        <option value={"default"} selected>Packaging Type</option>
+                        <option  defaultValue={"default"}>Packaging Type</option>
                         <option value="pouch">Pouch</option>
                         <option value="box">Box</option>
                     </select>
@@ -118,7 +118,7 @@ const Shipping = ({callback}:{callback: (ship: Shipping) => void}) => {
 
             <div className="relative mt-5" >
                     <select  onChange={(e) => handleOnchange(e, "courier")} className="bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                        <option value={"default"} selected>Available Courier</option>
+                        <option defaultValue={"default"}>Available Courier</option>
                         <option value="pouch">Pouch</option>
                         <option value="box">Box</option>
                     </select>

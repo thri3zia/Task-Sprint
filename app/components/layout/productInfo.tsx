@@ -52,7 +52,7 @@ export const ProductInformation = ({callback}: {callback: (product: Product)=>vo
 
     useEffect(() => {
         callback({name, category, subcategory, description, quantity});
-    }, [name, category, subcategory, description, quantity]);
+    }, [name, category, subcategory, description, quantity, callback]);
 
     return ( 
         <form>
@@ -65,7 +65,7 @@ export const ProductInformation = ({callback}: {callback: (product: Product)=>vo
 
                 <div className="relative mt-5" >
                     <select id='category' onChange={(e) => handleOnchange(e, 'category')} className="bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                        <option value={"default"} selected>Product Category</option>
+                        <option defaultValue={"default"} >Product Category</option>
                         <option value="amparito">Amparito</option>
                         <option value="fine jewelry ">Fine Jewelry</option>
                     </select>
@@ -73,7 +73,7 @@ export const ProductInformation = ({callback}: {callback: (product: Product)=>vo
 
                 <div className="relative mt-5" >
                     <select id='subcategory' onChange={(e) => handleOnchange(e, 'subcategory')} className="bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                        <option value={"default"} selected>Sub Category</option>
+                        <option defaultValue={"default"}>Sub Category</option>
                         <option value="ring">Rings</option>
                         <option value="necklace">Necklaces</option>
                         <option value="bracelets">Bracelets</option>
