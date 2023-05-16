@@ -37,7 +37,7 @@ const MediaBox = (
   
     return ( 
         <div className="pt-10">
-          <div className="grid grid-cols-6 gap-5 h-fit">
+          <div className="grid grid-cols-7 gap-3 h-fit">
 
                     <label htmlFor="dropzone-file" className="flex items-center justify-center w-full aspect-video border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                         <div className="flex flex-col items-center justify-center pt-2 pb-2 w-40 h-40">
@@ -51,13 +51,13 @@ const MediaBox = (
 
                     {selectedImage.length? selectedImage.map((e, index) =>(
 
-                        <div className="flex items-center justify-center w-full aspect-video border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                            <div className="flex flex-col items-center justify-center pt-2 pb-2 w-40 h-40">
-                                <input type="image" key={index} src={e} alt="" width={150} height={150}/> 
+                        <div className="flex items-center justify-center w-150 aspect-video border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                            <div className="flex flex-col items-center justify-center pt-2 pb-2">
+                                <input type="image" key={index} src={e} alt="" width={130} height={140}/> 
                             </div>
 
                             <div>
-                                
+
                             
                             </div>      
                         </div>

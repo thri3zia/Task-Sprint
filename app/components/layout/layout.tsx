@@ -51,7 +51,7 @@ const Layout = () => {
                 <ProductInformation callback={setProductInfo}/>
             </div>
 
-            <div className="ps-8 mb-3 ml-5 text-gray-500 dark:text-gray-400">
+            <div className="ps-8 mb-3 ml-10 text-gray-500 dark:text-gray-400">
                 <div className="font-semibold text-xl text-gray-900">Sales Information</div>
                 <SalesInformation callback={setSales}/>
             </div>
@@ -71,11 +71,10 @@ const Layout = () => {
         </div>
 
         <div>
-            <div className="mb-4 w-4/5 my-1 ml-36 h-[420px]">
+            <div className="mb-5 w-4/5 ml-36">
                 <div className="font-semibold text-xl ml-10">Tags 
                     <div className="float-right"><AddTag/></div>
                 </div>
-            
                 <TagSection callback={setTags}/>
             </div>
         </div>

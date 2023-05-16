@@ -13,7 +13,7 @@ const TagSection = ({callback}:{callback: (tag: Tags)=> void}) => {
         callback({maintag, subtag})
     }, [maintag, subtag]);
     return ( 
-        <div className="ml-24 mt-12">
+        <div className="ml-24 mt-7">
             <div>
                 <div className="">Main Tags</div>
                 <MainTags callback={setMaintag}/>
