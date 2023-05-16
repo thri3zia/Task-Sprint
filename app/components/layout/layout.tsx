@@ -42,9 +42,7 @@ const Layout = () => {
     }, [selectedImages, productInfo, shipping, sales,tags])
 
     
-        
     
-
     return ( 
         <div>
         <div className="scroll-smooth mt-12 pr- h-50 grid grid-cols-3 gap-4 content-center  ">
